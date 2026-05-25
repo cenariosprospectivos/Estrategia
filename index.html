@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estratégia | MD 2036</title>
+
+  <meta name="description" content="Ferramenta pedagógica para visualizar a árvore estratégica da Pesquisa MD 2036.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Estratégia MD 2036">
+  <meta property="og:title" content="Estratégia | MD 2036">
+  <meta property="og:description" content="Da missão às iniciativas: uma trilha estratégica a partir de cenários, consequências e medidas.">
+  <meta property="og:url" content="https://cenariosprospectivos.github.io/Estrategia/">
+  <meta property="og:image" content="https://cenariosprospectivos.github.io/Estrategia/assets/share/estrategia-share.jpg">
+  <meta property="og:image:secure_url" content="https://cenariosprospectivos.github.io/Estrategia/assets/share/estrategia-share.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="kicker">Formulação estratégica</p>
+      <h1>Da análise à ação</h1>
+      <p class="lead">
+        Esta etapa organiza a passagem dos cenários, consequências e medidas para uma árvore estratégica compreensível.
+      </p>
+    </div>
+    <nav class="hero-actions">
+      <a href="https://cenariosprospectivos.github.io/Interpretacao/" target="_blank" rel="noopener">Interpretação</a>
+      <a href="https://cenariosprospectivos.github.io/Cenarios/" target="_blank" rel="noopener">Cenários</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="explain-grid">
+      <article class="explain-card">
+        <strong>1. Missão</strong>
+        <p>Mostra por que a organização existe e qual finalidade precisa ser protegida.</p>
+      </article>
+      <article class="explain-card">
+        <strong>2. Objetivo e processo</strong>
+        <p>Traduzem a missão em resultado desejado e indicam qual capacidade precisa melhorar.</p>
+      </article>
+      <article class="explain-card">
+        <strong>3. Estratégia e iniciativa</strong>
+        <p>Indicam o caminho escolhido e o conjunto organizado de ações para executar a resposta.</p>
+      </article>
+    </section>
+
+    <section class="metric-grid">
+      <article class="metric-card">
+        <span>Missões</span>
+        <strong id="metricMissoes">0</strong>
+        <small>Finalidades estratégicas consideradas.</small>
+      </article>
+      <article class="metric-card">
+        <span>Objetivos</span>
+        <strong id="metricObjetivos">0</strong>
+        <small>Resultados estratégicos esperados.</small>
+      </article>
+      <article class="metric-card priority-card">
+        <span>Iniciativas</span>
+        <strong id="metricIniciativas">0</strong>
+        <small>Programas ou ações organizadas.</small>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-header">
+        <div>
+          <span class="section-number">01</span>
+          <h2>Trilha estratégica</h2>
+          <p class="section-lead">
+            Em vez de uma árvore abstrata, a trilha mostra a sequência lógica: missão → objetivo → processo → estratégia → iniciativa → medida.
+          </p>
+        </div>
+        <div class="button-row">
+          <button id="reloadBtn" type="button" class="ghost-btn">Recarregar</button>
+          <button id="exportJsonBtn" type="button" class="ghost-btn">Exportar JSON</button>
+          <button id="exportCsvBtn" type="button" class="ghost-btn">Exportar CSV</button>
+        </div>
+      </div>
+
+      <div id="statusBox" class="status">Carregando dados...</div>
+
+      <div id="strategyPath" class="strategy-path"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-header">
+        <div>
+          <span class="section-number">02</span>
+          <h2>Como ler a árvore</h2>
+          <p class="section-lead">
+            Esta área traduz os conceitos do curso para perguntas simples de planejamento.
+          </p>
+        </div>
+      </div>
+
+      <div class="guide-grid">
+        <article class="guide-card">
+          <span>Missão</span>
+          <strong>Por que existimos?</strong>
+          <p>Define a finalidade institucional que orienta todos os demais níveis.</p>
+        </article>
+        <article class="guide-card">
+          <span>Objetivo</span>
+          <strong>O que precisa ser alcançado?</strong>
+          <p>Converte a missão em resultado concreto esperado.</p>
+        </article>
+        <article class="guide-card">
+          <span>Processo</span>
+          <strong>Que capacidade precisa funcionar melhor?</strong>
+          <p>Identifica a área crítica que precisa ser fortalecida.</p>
+        </article>
+        <article class="guide-card">
+          <span>Estratégia</span>
+          <strong>Qual caminho será adotado?</strong>
+          <p>Define a lógica de ação para alcançar o objetivo.</p>
+        </article>
+        <article class="guide-card">
+          <span>Iniciativa</span>
+          <strong>Como organizar a execução?</strong>
+          <p>Transforma a estratégia em programa, projeto ou frente de trabalho.</p>
+        </article>
+        <article class="guide-card">
+          <span>Medida</span>
+          <strong>O que será feito na prática?</strong>
+          <p>Conecta a ação concreta às consequências identificadas nos cenários.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-header">
+        <div>
+          <span class="section-number">03</span>
+          <h2>Síntese estratégica</h2>
+          <p class="section-lead">
+            A síntese mostra como a análise prospectiva pode se converter em uma agenda de ação.
+          </p>
+        </div>
+      </div>
+
+      <article class="synthesis-card">
+        <p id="synthesisText">Carregando síntese...</p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-header">
+        <div>
+          <span class="section-number">04</span>
+          <h2>Tabela consolidada</h2>
+          <p class="section-lead">
+            Visão tabular para conferir todos os vínculos da árvore estratégica.
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Missão</th>
+              <th>Objetivo</th>
+              <th>Processo</th>
+              <th>Estratégia</th>
+              <th>Iniciativa</th>
+              <th>Medida</th>
+            </tr>
+          </thead>
+          <tbody id="strategyTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Ferramenta conectada ao Supabase da Pesquisa MD 2036. O exemplo pré-preenchido apoia a narrativa do storytelling do curso.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
